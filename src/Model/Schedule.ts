@@ -1,5 +1,16 @@
 import { ModelBase } from '@chalkysticks/sdk-core';
 
+/**
+ * ┌────────────────────────────────────────────────────────────────────────────┐
+ * │                                                                            │
+ * │ ModelSchedule                                                              │
+ * │                                                                            │
+ * │ @namespace Model                                                           │
+ * │ @package   SDK-TV                                                          │
+ * │ @project   ChalkySticks                                                    │
+ * │                                                                            │
+ * └────────────────────────────────────────────────────────────────────────────┘
+ */
 export default class ModelSchedule extends ModelBase {
     /**
      * Endpoint key

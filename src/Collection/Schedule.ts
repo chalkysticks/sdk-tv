@@ -1,6 +1,17 @@
 import { CollectionBase } from '@chalkysticks/sdk-core';
 import ModelSchedule from '../Model/Schedule';
 
+/**
+ * ┌────────────────────────────────────────────────────────────────────────────┐
+ * │                                                                            │
+ * │ CollectionSchedule                                                         │
+ * │                                                                            │
+ * │ @namespace Collection                                                      │
+ * │ @package   SDK-TV                                                          │
+ * │ @project   ChalkySticks                                                    │
+ * │                                                                            │
+ * └────────────────────────────────────────────────────────────────────────────┘
+ */
 export default class CollectionSchedule extends CollectionBase {
     /**
      * Endpoint key
