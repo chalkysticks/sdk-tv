@@ -5,6 +5,7 @@ const Schedule_1 = require("../Model/Schedule");
 class CollectionSchedule extends sdk_core_1.CollectionBase {
     constructor() {
         super(...arguments);
+        this.endpoint = 'tv/schedule';
         this.model = Schedule_1.default;
     }
 }
