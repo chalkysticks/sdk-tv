@@ -24,11 +24,6 @@
         "dist",
         "README.md"
     ],
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm --no-git-tag-version version patch && git add ."
-        }
-    },
     "homepage": "https://www.chalkysticks.com",
     "keywords": [
         "billiards",
@@ -46,10 +41,10 @@
         "build": "tsc",
         "coverage": "nyc npm test",
         "lint": "eslint \"**\\*.ts\"",
+        "prepare": "husky install",
         "prettier": "prettier -c src/**/*.ts",
-        "test": "ts-mocha -p ./node_modules/@chalkysticks/mrm-preset/tsconfig.test.json test/**/*.spec.ts",
-        "version": "git add -A src"
+        "test": "ts-mocha -p ./node_modules/@chalkysticks/mrm-preset/tsconfig.test.json test/**/*.spec.ts"
     },
     "types": "dist/index.d.ts",
-    "version": "1.0.1"
+    "version": "1.0.3"
 }
