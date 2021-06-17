@@ -14,6 +14,7 @@
         "chai": "^4.2.0",
         "eloquent-js": "github:mattkenefick/eloquentjs#v2",
         "eslint": "^7.17.0",
+        "husky": "^6.0.0",
         "mocha": "^8.2.1",
         "nyc": "^15.1.0",
         "ts-mocha": "^8.0.0",
@@ -23,6 +24,11 @@
         "dist",
         "README.md"
     ],
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm --no-git-tag-version version patch && git add ."
+        }
+    },
     "homepage": "https://www.chalkysticks.com",
     "keywords": [
         "billiards",
@@ -42,7 +48,7 @@
         "lint": "eslint \"**\\*.ts\"",
         "prettier": "prettier -c src/**/*.ts",
         "test": "ts-mocha -p ./node_modules/@chalkysticks/mrm-preset/tsconfig.test.json test/**/*.spec.ts",
-        "version": "npm run format && git add -A src"
+        "version": "git add -A src"
     },
     "types": "dist/index.d.ts",
     "version": "1.0.1"
