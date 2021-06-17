@@ -1,2 +1,2 @@
 # sdk-tv
-ChalkySticks SDK for web-based clients dealing with TV
+ChalkySticks SDK for web-based clients dealing with facts
