@@ -7,5 +7,5 @@ export default class CollectionSchedule extends CollectionBase {
      *
      * @type ModelSchedule
      */
-    public model: ModelSchedule = ModelSchedule;
+    public model: any = ModelSchedule;
 }

@@ -16,7 +16,7 @@ export default class ModelSchedule extends ModelBase {
         return this.attr('description');
     }
     getDuration() {
-        return this.attr('number');
+        return parseFloat(this.attr('duration'));
     }
     getEmbedUrl() {
         return this.attr('embed_url');

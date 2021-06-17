@@ -33,10 +33,14 @@ const collection: CollectionSchedule = CollectionSchedule.hydrate([
 
 
 /**
- * Schedule Test
- */
-describe('Schedule', () => {
+  ┌────────────────────────────────────────────────────────────────────────────┐
+  │                                                                            │
+  │ Local tests                                                                │
+  │                                                                            │
+  └────────────────────────────────────────────────────────────────────────────┘
+*/
 
+describe('Schedule - Local', () => {
     it('should have a duration equaling 3994', () => {
         const model: ModelSchedule = collection.at(0);
 
@@ -48,5 +52,4 @@ describe('Schedule', () => {
 
         expect(model.getTitle()).to.equal('Dimitris Loukatos vs Nick Ekonomopoulos');
     });
-
 });

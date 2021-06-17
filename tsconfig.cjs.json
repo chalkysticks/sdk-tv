@@ -4,8 +4,7 @@
     },
     "extends": "./node_modules/@chalkysticks/mrm-preset/tsconfig.cjs.json",
     "files": [
-        "./src/Definition/Interface.d.ts",
-        "./src/Definition/Reference.d.ts"
+        "./src/Definition/Interface.d.ts"
     ],
     "include": [
         "./src/**/*"

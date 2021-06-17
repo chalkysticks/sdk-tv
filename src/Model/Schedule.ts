@@ -45,7 +45,7 @@ export default class ModelSchedule extends ModelBase {
      * @return number
      */
     public getDuration(): number {
-        return parseFloat(this.attr('duration'));
+        return parseFloat(this.attr('duration') as string);
     }
 
     /**
