@@ -87,6 +87,23 @@ export default class ModelSchedule extends ModelBase {
     }
 
     /**
+     * Parse out video URL
+     *
+     * @param string url
+     * @return string
+     */
+    public getVideoId(): string {
+        const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??(?:v=)?([^#\&\?]*).*/;
+        const match = this.getEmbedUrl().match(regExp);
+
+        if (match && match[7].length == 11) {
+            return match[7];
+        }
+
+        return '';
+    }
+
+    /**
      * If the video is live
      *
      * @return boolean

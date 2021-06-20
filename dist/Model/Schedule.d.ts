@@ -7,5 +7,6 @@ export default class ModelSchedule extends ModelBase {
     getEmbedUrl(): string;
     getMeta(): any;
     getTitle(): string;
+    getVideoId(): string;
     isLive(): boolean;
 }

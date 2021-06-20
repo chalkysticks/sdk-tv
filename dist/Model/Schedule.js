@@ -32,6 +32,14 @@ class ModelSchedule extends sdk_core_1.ModelBase {
     getTitle() {
         return this.attr('title');
     }
+    getVideoId() {
+        const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??(?:v=)?([^#\&\?]*).*/;
+        const match = this.getEmbedUrl().match(regExp);
+        if (match && match[7].length == 11) {
+            return match[7];
+        }
+        return '';
+    }
     isLive() {
         return !!this.attr('is_live');
     }
