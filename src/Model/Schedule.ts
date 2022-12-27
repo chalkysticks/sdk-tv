@@ -1,15 +1,9 @@
 import { ModelBase } from '@chalkysticks/sdk-core';
 
 /**
- * ┌────────────────────────────────────────────────────────────────────────────┐
- * │                                                                            │
- * │ ModelSchedule                                                              │
- * │                                                                            │
- * │ @namespace Model                                                           │
- * │ @package   SDK-TV                                                          │
- * │ @project   ChalkySticks                                                    │
- * │                                                                            │
- * └────────────────────────────────────────────────────────────────────────────┘
+ * @class ModelSchedule
+ * @package Model
+ * @project ChalkySticks SDK TV
  */
 export default class ModelSchedule extends ModelBase {
     /**
@@ -113,5 +107,4 @@ export default class ModelSchedule extends ModelBase {
     }
 
     // endregion: Getters
-
 }

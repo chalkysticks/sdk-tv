@@ -2,21 +2,16 @@ import { CollectionBase } from '@chalkysticks/sdk-core';
 import ModelSchedule from '../Model/Schedule';
 
 /**
- * ┌────────────────────────────────────────────────────────────────────────────┐
- * │                                                                            │
- * │ CollectionSchedule                                                         │
- * │                                                                            │
- * │ @namespace Collection                                                      │
- * │ @package   SDK-TV                                                          │
- * │ @project   ChalkySticks                                                    │
- * │                                                                            │
- * └────────────────────────────────────────────────────────────────────────────┘
+ * @class CollectionSchedule
+ * @package Collection
+ * @project ChalkySticks SDK TV
  */
-export default class CollectionSchedule extends CollectionBase {
+export default class CollectionSchedule extends CollectionBase<ModelSchedule> {
     /**
      * Endpoint key
      * e.g. https://api.chalkysticks.com/v1/tv/schedule
      *
+	 * @requires v1
      * @type string
      */
     public endpoint: string = 'tv/schedule';
@@ -26,7 +21,7 @@ export default class CollectionSchedule extends CollectionBase {
      *
      * @type ModelSchedule
      */
-    public model: any = ModelSchedule;
+    public model: ModelSchedule = new ModelSchedule();
 
 
     // region: Getters
