@@ -17,6 +17,12 @@ class ModelSchedule extends sdk_core_1.ModelBase {
             'created_at',
         ];
     }
+    generateVideoMarkup(startTime = 0) {
+        const videoId = this.getVideoId();
+        const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&start=${startTime}&rel=0&showinfo=0&controls=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&origin=${window.location.origin}`;
+        const output = `<iframe width="100%" height="100%" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        return output;
+    }
     getDescription() {
         return this.attr('description');
     }
