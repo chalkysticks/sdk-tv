@@ -42,6 +42,12 @@ class CollectionSchedule extends sdk_core_1.CollectionBase {
         const timeData = this.getTimeData();
         return timeData.time;
     }
+    flagCurrentVideo(reason = '') {
+        const currentVideo = this.getCurrentVideo();
+        this.remove(currentVideo);
+        console.log('@todo Flagging current video', reason);
+        return this.getCurrentVideo();
+    }
 }
 exports.default = CollectionSchedule;
 //# sourceMappingURL=Schedule.js.map

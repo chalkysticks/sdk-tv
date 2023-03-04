@@ -12,4 +12,5 @@ export default class CollectionSchedule extends CollectionBase<ModelSchedule> {
     getSecondsSinceMidnight(): number;
     getTimeData(): ITimeData;
     getTimeForCurrentVideo(): number;
+    flagCurrentVideo(reason?: string): ModelSchedule;
 }

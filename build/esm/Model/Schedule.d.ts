@@ -3,6 +3,7 @@ export default class ModelSchedule extends ModelBase {
     endpoint: string;
     fields: string[];
     generateVideoMarkup(startTime?: number): string;
+    generateVideoUrl(startTime?: number): string;
     getDescription(): string;
     getDuration(): number;
     getEmbedUrl(): string;

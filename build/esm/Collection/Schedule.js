@@ -37,5 +37,11 @@ export default class CollectionSchedule extends CollectionBase {
         const timeData = this.getTimeData();
         return timeData.time;
     }
+    flagCurrentVideo(reason = '') {
+        const currentVideo = this.getCurrentVideo();
+        this.remove(currentVideo);
+        console.log('@todo Flagging current video', reason);
+        return this.getCurrentVideo();
+    }
 }
 //# sourceMappingURL=Schedule.js.map
