@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- Link -->
+		<link rel="icon" href="https://buck.co/favicon.ico" />
+
+		<!-- Title -->
+		<title>TV SDK | ChalkySticks</title>
+	</head>
+	<body>
+		<main>
+			<header>
+				<h1>ChalkySticks TV SDK</h1>
+			</header>
+
+			<section></section>
+		</main>
+
+		<!-- Application -->
+		<script type="module">
+			import { CollectionSchedule, ModelSchedule} from '/build/web/chalkysticks-tv.js';
+
+			// Example
+			;(async () => {
+				const scheduleCollection = new CollectionSchedule({
+					baseUrl: 'https://api.chalkysticks.com/v1',
+				});
+
+				// Fetch data
+				await scheduleCollection.fetch();
+
+				// Get the current video
+				const scheduleModel = scheduleCollection.getCurrentVideo();
+				const currentTime = scheduleCollection.getTimeForCurrentVideo();
+
+				//
+				const markup = scheduleModel.generateVideoMarkup(currentTime);
+
+				// Output
+				document.querySelector('section').innerHTML = markup;
+			})();
+		</script>
+	</body>
+</html>
