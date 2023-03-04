@@ -35,12 +35,38 @@ export default class ModelSchedule extends ModelBase {
     // region: Getters
     // ---------------------------------------------------------------------------
 
+	/**
+	 * Generate YouTube video markup
+	 *
+	 * @param number startTime
+	 * @return string
+	 */
+	public generateVideoMarkup(startTime: number = 0): string {
+		const videoUrl = this.generateVideoUrl(startTime);
+		const output = `<iframe width="100%" height="100%" src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+
+		return output;
+	}
+
+	/**
+	 * Generate YouTube video url
+	 *
+	 * @param number startTime
+	 * @return string
+	 */
+	public generateVideoUrl(startTime: number = 0): string {
+		const videoId = this.getVideoId();
+		const output = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&start=${startTime}&rel=0&showinfo=0&controls=0&iv_load_policy=3&modestbranding=1&enablejsapi=1&origin=${window.location.origin}`;
+
+		return output;
+	}
+
     /**
      * Get description of the video
      *
      * @return string
      */
-     public getDescription(): string {
+	public getDescription(): string {
         return this.attr('description') as string;
     }
 
@@ -67,7 +93,7 @@ export default class ModelSchedule extends ModelBase {
      *
      * @return object
      */
-     public getMeta(): any {
+	public getMeta(): any {
         return JSON.parse(this.attr('video_meta') as string);
     }
 
@@ -102,7 +128,7 @@ export default class ModelSchedule extends ModelBase {
      *
      * @return boolean
      */
-     public isLive(): boolean {
+	public isLive(): boolean {
         return !!this.attr('is_live');
     }
 

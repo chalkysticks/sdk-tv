@@ -2,6 +2,15 @@ import { CollectionBase } from '@chalkysticks/sdk-core';
 import ModelSchedule from '../Model/Schedule';
 
 /**
+ * @type interface
+ */
+export interface ITimeData {
+	duration: number;
+	index: number;
+	time: number;
+}
+
+/**
  * @class CollectionSchedule
  * @package Collection
  * @project ChalkySticks SDK TV
@@ -55,9 +64,9 @@ export default class CollectionSchedule extends CollectionBase<ModelSchedule> {
     /**
      * Get video at the current time
      *
-     * @return ModelSchedule
+     * @return ITimeData
      */
-    public getTimeData() {
+    public getTimeData(): ITimeData {
         const now: number = this.getSecondsSinceMidnight();
         let model: ModelSchedule;
         let d: number = 0;
@@ -83,7 +92,7 @@ export default class CollectionSchedule extends CollectionBase<ModelSchedule> {
     }
 
     /**
-     *
+     * @return number
      */
     public getTimeForCurrentVideo(): number {
         const timeData = this.getTimeData();
