@@ -45,6 +45,12 @@
 
 				// Output
 				document.querySelector('section').innerHTML = markup;
+
+				// Wait
+				setTimeout(() => {
+					const newVideo = scheduleCollection.flagCurrentVideo();
+					console.log(newVideo);
+				}, 1000 * 5);
 			})();
 		</script>
 	</body>

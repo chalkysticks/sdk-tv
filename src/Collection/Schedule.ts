@@ -99,5 +99,23 @@ export default class CollectionSchedule extends CollectionBase<ModelSchedule> {
         return timeData.time;
     }
 
+    /**
+     * Will flag and remove the current video
+     *
+     * @return ModelSchedule
+     */
+    public flagCurrentVideo(reason: string = ''): ModelSchedule {
+        const currentVideo: ModelSchedule = this.getCurrentVideo();
+
+		// Remove from collection
+		this.remove(currentVideo);
+
+		// Log
+		console.log('@todo Flagging current video', reason);
+
+		// Return new video
+        return this.getCurrentVideo();
+    }
+
     // endregion: Getters
 }
