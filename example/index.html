@@ -25,11 +25,11 @@
 
 		<!-- Application -->
 		<script type="module">
-			import { CollectionSchedule, ModelSchedule} from '/build/web/chalkysticks-tv.js';
+			import { Collection, Model } from '/build/web/chalkysticks-tv.js';
 
 			// Example
 			;(async () => {
-				const scheduleCollection = new CollectionSchedule({
+				const scheduleCollection = new Collection.Schedule({
 					baseUrl: 'https://api.chalkysticks.com/v1',
 				});
 

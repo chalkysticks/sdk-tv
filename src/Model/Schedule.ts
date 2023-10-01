@@ -1,11 +1,11 @@
-import { ModelBase } from '@chalkysticks/sdk-core';
+import { Model } from '@chalkysticks/sdk-core';
 
 /**
- * @class ModelSchedule
+ * @class Schedule
  * @package Model
  * @project ChalkySticks SDK TV
  */
-export default class ModelSchedule extends ModelBase {
+export class Schedule extends Model.Base {
     /**
      * Endpoint key
      * e.g. https://api.chalkysticks.com/v1/tv/schedule
@@ -30,7 +30,6 @@ export default class ModelSchedule extends ModelBase {
         'air_at',
         'created_at',
     ];
-
 
     // region: Getters
     // ---------------------------------------------------------------------------

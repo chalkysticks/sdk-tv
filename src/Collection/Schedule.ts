@@ -1,5 +1,5 @@
-import { CollectionBase } from '@chalkysticks/sdk-core';
-import ModelSchedule from '../Model/Schedule';
+import { Collection } from '@chalkysticks/sdk-core';
+import * as Model from '../Model';
 
 /**
  * @type interface
@@ -11,11 +11,11 @@ export interface ITimeData {
 }
 
 /**
- * @class CollectionSchedule
+ * @class Schedule
  * @package Collection
  * @project ChalkySticks SDK TV
  */
-export default class CollectionSchedule extends CollectionBase<ModelSchedule> {
+export class Schedule extends Collection.Base<Model.Schedule> {
     /**
      * Endpoint key
      * e.g. https://api.chalkysticks.com/v1/tv/schedule
@@ -28,9 +28,9 @@ export default class CollectionSchedule extends CollectionBase<ModelSchedule> {
     /**
      * Model object instantiated by this collection
      *
-     * @type ModelSchedule
+     * @type Model.Schedule
      */
-    public model: ModelSchedule = new ModelSchedule();
+    public model: Model.Schedule = new Model.Schedule();
 
 
     // region: Getters
@@ -39,12 +39,12 @@ export default class CollectionSchedule extends CollectionBase<ModelSchedule> {
     /**
      * Get video at the current time
      *
-     * @return ModelSchedule
+     * @return Model.Schedule
      */
-    public getCurrentVideo(): ModelSchedule {
+    public getCurrentVideo(): Model.Schedule {
         const timeData = this.getTimeData();
 
-        return this.at(timeData.index) as ModelSchedule;
+        return this.at(timeData.index) as Model.Schedule;
     }
 
     /**
@@ -68,14 +68,14 @@ export default class CollectionSchedule extends CollectionBase<ModelSchedule> {
      */
     public getTimeData(): ITimeData {
         const now: number = this.getSecondsSinceMidnight();
-        let model: ModelSchedule;
+        let model: Model.Schedule;
         let d: number = 0;
         let n: number = 0;
         let i: number = 0;
 
         // Iterate through collection
         for (i; i < this.length; i++) {
-            model = this.at(i) as ModelSchedule;
+            model = this.at(i) as Model.Schedule;
             d = model.getDuration();
             n += d;
 
@@ -102,10 +102,10 @@ export default class CollectionSchedule extends CollectionBase<ModelSchedule> {
     /**
      * Will flag and remove the current video
      *
-     * @return ModelSchedule
+     * @return Model.Schedule
      */
-    public flagCurrentVideo(reason: string = ''): ModelSchedule {
-        const currentVideo: ModelSchedule = this.getCurrentVideo();
+    public flagCurrentVideo(reason: string = ''): Model.Schedule {
+        const currentVideo: Model.Schedule = this.getCurrentVideo();
 
 		// Remove from collection
 		this.remove(currentVideo);

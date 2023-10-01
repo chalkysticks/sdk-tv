@@ -1,16 +1,16 @@
-import { CollectionBase } from '@chalkysticks/sdk-core';
-import ModelSchedule from '../Model/Schedule';
+import { Collection } from '@chalkysticks/sdk-core';
+import * as Model from '../Model';
 export interface ITimeData {
     duration: number;
     index: number;
     time: number;
 }
-export default class CollectionSchedule extends CollectionBase<ModelSchedule> {
+export declare class Schedule extends Collection.Base<Model.Schedule> {
     endpoint: string;
-    model: ModelSchedule;
-    getCurrentVideo(): ModelSchedule;
+    model: Model.Schedule;
+    getCurrentVideo(): Model.Schedule;
     getSecondsSinceMidnight(): number;
     getTimeData(): ITimeData;
     getTimeForCurrentVideo(): number;
-    flagCurrentVideo(reason?: string): ModelSchedule;
+    flagCurrentVideo(reason?: string): Model.Schedule;
 }

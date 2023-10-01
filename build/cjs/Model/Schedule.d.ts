@@ -1,5 +1,5 @@
-import { ModelBase } from '@chalkysticks/sdk-core';
-export default class ModelSchedule extends ModelBase {
+import { Model } from '@chalkysticks/sdk-core';
+export declare class Schedule extends Model.Base {
     endpoint: string;
     fields: string[];
     generateVideoMarkup(startTime?: number): string;

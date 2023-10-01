@@ -1,11 +1,10 @@
 import { expect } from 'chai';
-import CollectionSchedule from '../src/Collection/Schedule';
-import ModelSchedule from '../src/Model/Schedule';
+import { Collection, Model } from '../src';
 
 // Setup
 // ----------------------------------------------------------------------------
 
-const collection: CollectionSchedule = CollectionSchedule.hydrate([
+const collection: Collection.Schedule = Collection.Schedule.hydrate([
     {
         id: 672,
         title: 'Billy Thorpe vs Jason Klatt',

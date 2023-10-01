@@ -1,3 +1,3 @@
-export { default as CollectionSchedule } from './Collection/Schedule';
-export { default as Core } from '@chalkysticks/sdk-core';
-export { default as ModelSchedule } from './Model/Schedule';
+export * as Core from '@chalkysticks/sdk-core';
+export * as Collection from './Collection';
+export * as Model from './Model';
